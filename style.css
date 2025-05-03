@@ -1,19 +1,67 @@
+/* Apply a modern dark theme background and center everything */
+body {
+  background-color: #1e1e2f;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Game board styling */
 #game {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  grid-gap: 5px;
-  margin: 20px auto;
+  gap: 8px;
+  margin-bottom: 20px;
 }
+
+/* Each cell in the board */
 .cell {
   width: 100px;
   height: 100px;
-  background: #eee;
+  background-color: #292944;
+  border: 2px solid #444;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  color: #00ffcc;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+.cell:hover {
+  background-color: #3a3a5c;
+}
+
 .cell.taken {
   pointer-events: none;
 }
+
+/* Restart button */
+#restart {
+  background-color: #00ffcc;
+  border: none;
+  padding: 10px 20px;
+  color: #1e1e2f;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#restart:hover {
+  background-color: #00e6b2;
+}
+
+/* Status text */
+#status {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+}
+
